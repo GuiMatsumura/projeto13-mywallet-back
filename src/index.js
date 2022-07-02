@@ -1,14 +1,14 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { postUsers } from "./controllers/userController.js";
+import authRouter from "./routes/authRouter.js";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 dotenv.config();
 
-app.post("/users", postUsers);
+app.use(authRouter);
 
 const port = process.env.PORT || 5005;
 app.listen(port, () => {
