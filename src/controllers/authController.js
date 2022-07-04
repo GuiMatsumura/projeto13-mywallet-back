@@ -74,7 +74,7 @@ export async function postSections(req, res) {
       userId: findUser._id,
     });
 
-    res.status(200).send({ token });
+    res.status(200).send({ token, name: findUser.name });
   } catch (err) {
     res.status(500).send(err);
     return;
