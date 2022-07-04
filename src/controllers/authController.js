@@ -1,10 +1,7 @@
 import { db } from "../db/mongo.js";
 import joi from "joi";
 import bcrypt from "bcrypt";
-import dotenv from "dotenv";
 import { v4 as uuid } from "uuid";
-
-dotenv.config();
 
 export async function postUsers(req, res) {
   const user = req.body;
